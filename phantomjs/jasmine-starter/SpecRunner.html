@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jasmine Spec Runner</title>
+        <link rel="shortcut icon" href="lib/jasmine-1.2.0/jasmine_favicon.png">
+        <link rel="stylesheet" href="lib/jasmine-1.2.0/jasmine.css">
+    </head>
+    <body>
+        <script src="lib/jasmine-1.2.0/jasmine.js"></script>
+        <script src="lib/jasmine-1.2.0/jasmine-html.js"></script>
+        <script src="lib/console-runner.js"></script>
+        <script src="tests.js"></script>
+
+        <script>
+            // create a coneole reporter as well as a browser reporter, in
+            // order to print to both concole and browser
+            var console_reporter = new jasmine.ConsoleReporter();
+            jasmine.getEnv().addReporter(new Jasmine.HtmlReporter());
+            jasmine.getEnv().addReporter(console_reporter);
+            jasmine.getEnv().execute();
+        //    Old code below; tests pass when run in browser
+        //    (function() {
+        //     var jasmineEnv = jasmine.getEnv();
+        //     jasmineEnv.updateInterval = 1000;
+
+        //     var htmlReporter = new jasmine.HtmlReporter();
+
+        //     jasmineEnv.addReporter(htmlReporter);
+
+        //     jasmineEnv.specFilter = function(spec) {
+        //     return htmlReporter.specFilter(spec);
+        //     };
+
+        //     var currentWindowOnload = window.onload;
+
+        //     window.onload = function() {
+        //     if (currentWindowOnload) {
+        //     currentWindowOnload();
+        //     }
+        //     execJasmine();
+        //     };
+
+        //    function execJasmine() {
+        //         jasmineEnv.execute();
+        //     }
+
+        //    })();
+</script>
+    </body>
+</html>
