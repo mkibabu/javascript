@@ -14,7 +14,7 @@ describe ("DOM Tests", function ()
 
     it("is a child of the body", function()
     {
-        expect(myEl.parentHTML).toBe(document.body);
+        expect(myEl.parentElement).toBe(document.body);
     });
 
     it("has the right text", function()
