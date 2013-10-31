@@ -15,7 +15,7 @@
             // create a coneole reporter as well as a browser reporter, in
             // order to print to both concole and browser
             var console_reporter = new jasmine.ConsoleReporter();
-            jasmine.getEnv().addReporter(new Jasmine.HtmlReporter());
+            jasmine.getEnv().addReporter(new jasmine.HtmlReporter());
             jasmine.getEnv().addReporter(console_reporter);
             jasmine.getEnv().execute();
         //    Old code below; tests pass when run in browser
