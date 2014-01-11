@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+<!--
+3 basic steps to making a HTTP request in JS, i.e:
+1) create an XMLHttpRequest object
+2) assign a callback to handle the HTTP response, using the onreadystatechange
+property of the XMLHttpRequest object
+3) make the request, using the open() and send() methods of the HTTpRequest class
+-->
+
+<button id="myButton">Make a request</button>
+<script>
+var httpRequest = false;
+function makeRequest(url)
+{
+    if(window.XMLHttpRequest)
+    {
+        // Mozzilla, Safari, IE7, Chrome,etc
+        httpRequest = new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6 and older
+        httpRequest = new ActiveXObject("
+    }
+}
+
+</script>
+</body>
