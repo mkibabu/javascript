@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajax & jQuery Content Generator</title>
+    <script src = "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function ()
+        {
+            $("#generate").click(function ()
+            {
+                $("#quote p").load("generator.php");
+            });
+        });
+    </script>
+    <style type = "text/css" src = "style/style.css"> </style>
+</head>
+
+<body>
+
+<div id = "wrapper">
+    <div id = "quote"><p> </p></div>
+    <input type = "submit" id = "generate" value = "Hey presto!">
+</div>
+
+</body>
