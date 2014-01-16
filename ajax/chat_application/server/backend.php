@@ -2,7 +2,7 @@
 
 // Database connection variables
 $dbhost = "localhost";
-$dbuser = "root";
+$dbuser = "test";
 $dbpass = "";
 $dbname = "chat";
 
