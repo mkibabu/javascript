@@ -2,9 +2,9 @@
 
 // Database connection variables
 $dbhost = "localhost";
-$dbuser = "test";
-$dbpass = "";
-$dbname = "chat";
+$dbuser = "chatuser";
+$dbpass = "chatpass";
+$dbname = "chatdb";
 
 // number of records to store and display
 
