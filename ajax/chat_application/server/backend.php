@@ -13,7 +13,7 @@ $display_num = 10;
 
 error_reporting(E_ALL);             // identify all errors in the code
 header("Content-type: text/xml");   // make sure the output is treated as XML
-header("Cache-control: no-cache");  // make sure IE doesn't cache the request
+header("Cache-Control: no-cache");  // make sure IE doesn't cache the request
 
 // connect to db
 $dbconn = mysql_connect($dbhost, $dbuser, $dbpass);
@@ -28,16 +28,19 @@ if(@$action == "postmsg")
 {
     // insert the new message into the database
     mysql_query("INSERT INTO messages (`user`, `msg`, `time`)
-                VALUES ('$name', '$message', ".time().")");
+                VALUES ('$name', '$message', ".time().")", $dbconn);
     // delete old messages
     mysql_query("DELETE FROM messages WHERE id <= " .
                 (mysql_insert_id($dbconn)-$store_num), $dbconn);
 
 }
 
-// get the message info of messages yet to be downloaded, starting fromth e latest
-$messages = mysql_query("SELECT user, msg FROM messages WHERE time > $time
-                        order by id ACS LIMIT $display_num", $dbconn);
+// get the message info of messages yet to be downloaded, starting from the latest
+$messages = mysql_query("SELECT user, msg 
+			FROM messages 
+			WHERE time > $time
+                        order by id ASC 
+			LIMIT $display_num", $dbconn);
 
 if(mysql_num_rows($messages) == 0)
     $status_code = 2;
@@ -49,7 +52,7 @@ echo "<response>\n";
 echo "\t<status>$status_code</status>\n";
 echo "\t<time>" .time() . "</time>\n";
 
-if(status_code == 1)
+if($status_code == 1)
 {
     while($message = mysql_fetch_array($messages))
     {
